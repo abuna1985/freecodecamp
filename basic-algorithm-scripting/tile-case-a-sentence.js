@@ -22,7 +22,7 @@ function assertEqual(actual, expected, testName) {
   }
 }
 
-assertEqual(titleCase("I'm a little tea pot"), "I'm A Little Tea Pot", "Should return a string"); // Passed
+assertEqual(typeof titleCase("I'm a little tea pot"), "string", "Should return a string"); // Passed
 assertEqual(titleCase("I'm a little tea pot"), "I'm A Little Tea Pot", "Should return \"I'm A Little Tea Pot\""); // Passed
 assertEqual(titleCase("sHoRt AnD sToUt"), "Short And Stout", "Should return \"Short And Stout\""); // Passed
 assertEqual(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"), "Here Is My Handle Here Is My Spout", "Should return \"Here Is My Handle Here Is My Spout\""); // Passed

@@ -39,7 +39,7 @@ function assertEqual(actual, expected, testName) {
   }
 }
 
-assertEqual(findLongestWord("The quick brown fox jumped over the lazy dog"), 6, "should return a number "); // Passed
+assertEqual(typeof findLongestWord("The quick brown fox jumped over the lazy dog"), "number", "should return a number "); // Passed
 assertEqual(findLongestWord("The quick brown fox jumped over the lazy dog"), 6, "should return 6 "); // Passed
 assertEqual(findLongestWord("May the force be with you"), 5, "should return 5 "); // Passed
 assertEqual(reduceLongestWord("Google do a barrel roll"), 6, "should return 6 "); // Passed

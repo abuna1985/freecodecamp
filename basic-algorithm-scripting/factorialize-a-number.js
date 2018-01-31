@@ -18,13 +18,13 @@ function assertEqual(actual, expected, testName) {
   actual = JSON.stringify(actual);
   expected = JSON.stringify(expected);
   if (actual === expected) {
-      console.log(testName + " has passed");
+      console.log(testName + " has passed!");
   } else {
       console.log("FAILED [" + testName + "] expected: " + expected + "; but got: " + actual);
   }
 }
 
-assertEqual(factorialize(5), 120, "Should return a factorilized integer"); // Passed
-assertEqual(factorialize(10), 3628800, "Should return a factorilized integer"); // Passed
-assertEqual(factorialize(20), 2432902008176640000, "Should return a factorilized integer"); // Passed
-assertEqual(factorialize(0), 1, "Should return a factorilized integer"); // Passed
+assertEqual(typeof factorialize(5), "number", "Should return a integer"); // Passed
+assertEqual(factorialize(10), 3628800, "Should return 3628800"); // Passed
+assertEqual(factorialize(20), 2432902008176640000, "Should return 2432902008176640000"); // Passed
+assertEqual(factorialize(0), 1, "Should return 1"); // Passed

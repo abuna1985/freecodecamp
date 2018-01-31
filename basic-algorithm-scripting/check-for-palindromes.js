@@ -26,7 +26,7 @@ function assertEqual(actual, expected, testName) {
   }
 }
 
-assertEqual(palindrome("eye"), true, "should return a boolean"); // Passed
+assertEqual(typeof palindrome("eye"), "boolean", "should return a boolean"); // Passed
 assertEqual(palindrome("eye"), true, "should return true"); // Passed
 assertEqual(palindrome("_eye"), true, "should return true"); // Passed
 assertEqual(palindrome("race car"), true, "should return true"); // Passed
