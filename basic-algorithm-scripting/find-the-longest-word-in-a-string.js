@@ -8,9 +8,9 @@
 function findLongestWord(str) {
   var words = str.split(' ');
   var longest = 0;
-  for(var i = 0; i < words.length; i++) {
-    if(words[i].length > longest) {
-      longest = words[i].length;
+  for(let char of words) {
+    if(char.length > longest) {
+      longest = char.length;
     }
   }
   return longest;

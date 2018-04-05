@@ -6,12 +6,8 @@
 
 function palindrome(str) {
   var trueString = str.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
-  var reversedString = trueString.split('').reverse().join('');
-  if(trueString === reversedString){
-    return true;
-  } else {
-    return false;
-  }
+  var reversed = trueString.split('').reverse().join('');
+  return trueString === reversed;
 }
 
 palindrome("_eye");

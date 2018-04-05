@@ -1,10 +1,12 @@
-// Challenge: Tile Case a Sentence
+// Challenge: Title Case a Sentence
 // Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
 // For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+// Input: string
+// Output: string
 
 function titleCase(str) {
   var strings = str.toLowerCase().split(' ');
-  return strings.map(function(word, i) {
+  return strings.map(function(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
   }).join(' ');
 }
