@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "overlap";
+}
+
+.hero{
+  background: url("../images/workshop.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  grid-area: overlap;
+}
+
+.hero__image-container {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  border-radius: 100%;
+}
