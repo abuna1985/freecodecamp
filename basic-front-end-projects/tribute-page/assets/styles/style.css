@@ -14,7 +14,7 @@ body {
   box-sizing: inherit;
 }
 
-#main {
+.container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -28,19 +28,39 @@ body {
   -o-background-size: cover;
   background-size: cover;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   grid-area: overlap;
 }
 
+.hero:before {
+  content: '';
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+opacity: .6; 
+}
+
+.hero__intro {
+  z-index: 1;
+  color: #fff;
+}
+
 .hero__image-container {
   max-width: 250px;
   max-height: 250px;
+  z-index: 1;
 }
+
 
 .hero__image {
   width: 100%;
   height: auto;
   border-radius: 100%;
+  
 }
