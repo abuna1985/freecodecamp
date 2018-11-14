@@ -1,46 +1,57 @@
 body {
-  font-family: arial;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  background-color: #cccccc;
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
-}
-
-
-@media (min-width: 768px) {
-  .container {
-    display: grid;
-    grid-template-columns: 150px 1fr 150px;
-    grid-template-rows: 3fr;
-    grid-template-areas: "overlap overlap overlap"
-                         "......  main    ......."
-                         "footer  footer  footer";
-    height: 100%;
-  }
 }
 
 .overlay {
   height: auto;
   z-index: 1;
+  grid-area: overlap;
+}
+
+.overlay__intro {
+  font-size: 1rem;
+}
+
+.overlay__title {
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 3rem;
 }
 
 section {
-  grid-column: span 3;
+  /* grid-column: span 3; */
   height: 100vh;
   text-align: center;
   font-size: 1.4em;
   background: url('../images/workshop.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   grid-area: overlap
 }
 
@@ -51,25 +62,55 @@ top: 0;
 right: 0;
 bottom: 0;
 left: 0;
+background-image: -webkit-gradient(linear,left top, right bottom,from(#002f4b),to(#dc4225));
 background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-opacity: .6; 
-height: 100%;
+opacity: .7; 
+height: 100vh;
 }
 
-.img-container {
-  max-width: 250px;
+.overlay__img-container {
+  max-width: 200px;
+  margin: 0 auto;
 }
 
-img {
+.overlay__image {
   width: 100%;
   border-radius: 50%;
-  max-height: 275px;
+  max-height: auto;
 }
 
-main {
-  flex: 1;
-  padding: 20px;
-  grid-area: main
+.content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 15px;
+  grid-area: main;
+}
+
+.content__title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.block {
+  margin: 0 auto;
+}
+
+.block__text {
+  padding: 0 20px;
+}
+
+.gallery__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+.gallery__item img {
+  width: 50%;
+  height: 50%;
 }
 
 
@@ -87,4 +128,64 @@ h1 {
   margin-bottom: 1em;
   font-size: 1.3em;
   font-weight: bold;
+}
+
+.block__title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.block__title:after {
+  content: ""; /* This is necessary for the pseudo element to work. */ 
+  display: block; /* This will put the pseudo element on its own line. */
+  margin: 0 auto; /* This will center the border. */
+  width: 50px; /* Change this to whatever width you want. */
+  padding-top: 10px; /* This creates some space between the element and the border. */
+  border-bottom: 2px solid #dc4225; /* This creates the border. Replace black with whatever color you want. */
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 175px 1fr 175px;
+    grid-template-rows: 3fr;
+    grid-template-areas: "overlap overlap overlap"
+                         "......  main    ......."
+                         "footer  footer  footer";
+    height: 100%;
+  }
+
+  .overlay__intro {
+    font-size: 2rem;
+  }
+
+  .overlay__title {
+    font-size: 6rem;
+  }
+
+  .img-container {
+    max-width: 300px;
+  }
+
+  .block__text {
+    padding: 40px;
+  }
+
+  .content__title {
+    font-size: 2.4rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 250px 150px;
+  }
+  
+  .gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
 }
