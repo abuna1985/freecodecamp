@@ -1,41 +1,50 @@
-html {
-  box-sizing: border-box;
-}
-
-html,
 body {
-  margin: 0;
-  padding: 0;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+  font-family: arial;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "overlap";
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.hero{
-  background: url("../images/workshop.jpg") no-repeat center center;
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    grid-template-rows: 3fr;
+    grid-template-areas: "overlap overlap overlap"
+                         "......  main    ......."
+                         "footer  footer  footer";
+    height: 100%;
+  }
+}
+
+.overlay {
+  height: auto;
+  z-index: 1;
+}
+
+section {
+  grid-column: span 3;
+  height: 100vh;
+  text-align: center;
+  font-size: 1.4em;
+  background: url('../images/workshop.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  grid-area: overlap;
+  align-items: center;
+  grid-area: overlap
 }
 
-.hero:before {
+section:before {
   content: '';
 position: absolute;
 top: 0;
@@ -44,23 +53,38 @@ bottom: 0;
 left: 0;
 background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
 opacity: .6; 
+height: 100%;
 }
 
-.hero__intro {
-  z-index: 1;
-  color: #fff;
-}
-
-.hero__image-container {
+.img-container {
   max-width: 250px;
-  max-height: 250px;
-  z-index: 1;
+}
+
+img {
+  width: 100%;
+  border-radius: 50%;
+  max-height: 275px;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  grid-area: main
 }
 
 
-.hero__image {
-  width: 100%;
-  height: auto;
-  border-radius: 100%;
-  
+footer {
+  grid-column: span 3;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.4em;
+  background-color: #690;
+  color: white;
+  grid-area: footer;
+}
+
+h1 {
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  font-weight: bold;
 }
