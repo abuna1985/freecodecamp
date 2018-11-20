@@ -10,7 +10,7 @@ html {
 }
 
 .body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #cccccc;
 }
 
@@ -20,23 +20,29 @@ html {
   display: grid;
   grid-template-columns: 150px 1fr 150px;
   grid-template-rows: 100vh 500px 100px;
-  grid-template-areas: 
-  "hero     hero      hero"
-  "....     content   ...."
-  "footer   footer    footer"
+  grid-template-areas:
+    "hero     hero      hero"
+    "....     content   ...."
+    "footer   footer    footer";
 }
 
 .hero:before {
-  content: '';
-position: absolute;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-background-image: -webkit-gradient(linear,left top, right bottom,from(#002f4b),to(#dc4225));
-background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-opacity: .7; 
-height: 100vh;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    from(#002f4b),
+    to(#dc4225)
+  );
+  background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+  opacity: 0.7;
+  height: 100vh;
 }
 
 .hero {
@@ -45,33 +51,47 @@ height: 100vh;
   align-items: center;
   align-content: center;
   justify-content: center;
-  background: url('../images/workshop.jpg') no-repeat center center fixed;
+  background: url("../images/Nick-Offerman-as-Ignatius.jpg") no-repeat top
+    center fixed;
   background-size: cover;
-  color: #fff;
-  grid-area: hero
+  color: #FFDC00;
+  grid-area: hero;
 }
 
-.hero__intro, .hero__title, .hero__image {
+.hero__intro,
+.hero__title,
+.hero__image {
   z-index: 2;
 }
 
+.hero__intro {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
 .hero__title {
-  font-size: 4rem;
-  margin: 5px 0;
+  font-size: 5rem;
+  line-height: 5rem;
+  margin: 15px 0;
+  text-shadow: 
+  1px 1px #A27700,
+  2px 2px #A27700,
+  3px 3px #A27700,
+  4px 4px #A27700,
+  5px 5px #413000,
+  6px 6px 15px rgba(0,0,0,0.5);
 }
 
-.hero__image {
+/* .hero__image {
   max-width: 250px;
   border-radius: 50%;
-}
+} */
 
 .content {
   display: grid;
   justify-items: center;
   align-items: center;
   grid-area: content;
-
 }
 
 .gallery img {
@@ -92,22 +112,25 @@ height: 100vh;
 @media (max-width: 740px) {
   .container {
     grid-template-columns: 1fr;
-    grid-template-areas: 
-    "hero"
-    "content"
-    "footer"
+    grid-template-areas:
+      "hero"
+      "content"
+      "footer";
   }
-  
+
+ 
+
   .hero__image {
     max-width: 200px;
   }
 
   .hero__intro {
-    font-size: .75rem;
+    font-size: 1rem;
   }
 
   .hero__title {
     font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 
   .content {
@@ -122,6 +145,7 @@ height: 100vh;
 @media (max-width: 350px) {
   .hero__title {
     font-size: 2rem;
+    line-height: 2rem;
   }
 
   .content__title {
